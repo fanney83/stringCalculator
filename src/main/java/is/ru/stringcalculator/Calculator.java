@@ -33,10 +33,16 @@ public class Calculator {
 
 	private static int sum(String[] numbers)
 	{
-		int total=0;
+		int total = 0;
+		//String negatives [];
 		for(String number : numbers){
-			total += Integer.parseInt(number);
+			if(Integer.parseInt(number) < 1000)
+			{
+				total += Integer.parseInt(number);
+				//throw new exception("Negatives not allowed: " + Integer.parseInt(number));
+			}
 		}
 		return total;
 	}
+
 }
