@@ -25,4 +25,9 @@ public class CalculatorTest {
 		assertEquals(6, Calculator.add("1,2,3"));
 	}
 
+	@Test
+	public void testWithNewLine() {
+		assertEquals(24, Calculator.add("3,6\n15"));
+	}
+
 }
