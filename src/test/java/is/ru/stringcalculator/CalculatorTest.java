@@ -33,11 +33,21 @@ public class CalculatorTest {
 	}
 
 	@Test
-	public final void ifNegative() 
-		{
+	public final void ifNegative() {
 	    	Exception exception = null;
 		   	try {
 		        Calculator.add("1,-2");
+		    } catch (Exception e) {
+		        exception = e;
+	    }
+	}
+
+
+	@Test
+	public final void ifTwoNegatives() {
+		Exception exception = null;
+		   	try {
+		        Calculator.add("3, -5, 6, 9");
 		    } catch (Exception e) {
 		        exception = e;
 	    }
