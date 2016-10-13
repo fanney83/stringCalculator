@@ -37,17 +37,19 @@ public class Calculator {
 	{
 		int total = 0;
 		ArrayList<Integer> negativeNumbers = new ArrayList<Integer>();
+		int n = 0;
 
 		for(String number : numbers)
 		{
+			n = toInt(number);
 
-			if(Integer.parseInt(number) >= 0)
+			if(n >= 0)
 			{
-				total += Integer.parseInt(number);
+				total += n;
 			}
-			if(Integer.parseInt(number) < 0)
+			if(n < 0)
 			{
-				negativeNumbers.add(Integer.parseInt(number));
+				negativeNumbers.add(n);
 			}
 		}
 		if(negativeNumbers.size() > 0)
