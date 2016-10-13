@@ -43,7 +43,7 @@ public class Calculator {
 		{
 			n = toInt(number);
 
-			if(n >= 0)
+			if(n >= 0 && n < 1000)
 			{
 				total += n;
 			}

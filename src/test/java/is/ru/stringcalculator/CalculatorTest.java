@@ -42,7 +42,6 @@ public class CalculatorTest {
 	    }
 	}
 
-
 	@Test
 	public final void ifTwoNegatives() {
 		Exception exception = null;
@@ -52,4 +51,11 @@ public class CalculatorTest {
 		        exception = e;
 	    }
 	}
+	@Test
+	public void ifOver1000() {
+		assertEquals(45, Calculator.add("1000,5,3000,40"));
+	}
+
+
+
 }
