@@ -1,10 +1,11 @@
 package is.ru.stringcalculator;
+import java.util.ArrayList;
+
 
 public class Calculator {
 
 	public static int add(String text)
 	{
-
 		if(text.equals(""))
 			return 0;
 		if(text.contains(","))
@@ -16,7 +17,8 @@ public class Calculator {
 			return sum(splitNumbers(text));
 		}
 		else
-			 return 1;
+			return 1;
+
 	}
 
 	private static int toInt(String number)
@@ -34,15 +36,25 @@ public class Calculator {
 	private static int sum(String[] numbers)
 	{
 		int total = 0;
-		//String negatives [];
-		for(String number : numbers){
-			if(Integer.parseInt(number) < 1000)
+		ArrayList<Integer> negativeNumbers = new ArrayList<Integer>();
+
+		for(String number : numbers)
+		{
+
+			if(Integer.parseInt(number) >= 0)
 			{
 				total += Integer.parseInt(number);
-				//throw new exception("Negatives not allowed: " + Integer.parseInt(number));
+			}
+			if(Integer.parseInt(number) < 0)
+			{
+				negativeNumbers.add(Integer.parseInt(number));
 			}
 		}
+		if(negativeNumbers.size() > 0)
+		{
+			throw new RuntimeException("Negatives not allowed:" + negativeNumbers.toString());
+		}
+
 		return total;
 	}
-
 }

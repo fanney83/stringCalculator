@@ -2,6 +2,8 @@ package is.ru.stringcalculator;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.Rule;
 
 public class CalculatorTest {
 
@@ -30,29 +32,14 @@ public class CalculatorTest {
 		assertEquals(24, Calculator.add("3,6\n15"));
 	}
 
-	@Test 
-    public void testIgnoreBiggerThan1000(){
-
-    	assertEquals(19,Calculator.add("3,1000,1001,6,10"));
-
-    }
-	/*@Test
-	public void testIfNegative() {
-		Calculator.add("-3,6,15");
-	}
-
 	@Test
 	public final void ifNegative() 
 		{
-	    Exception exception = null;
-	    try {
-	        Calculator.add("3,-6,15,-18,46,33");
-	    } catch (Exception e) {
-	        exception = e;
+	    	Exception exception = null;
+		   	try {
+		        Calculator.add("1,-2");
+		    } catch (Exception e) {
+		        exception = e;
 	    }
-	    Assert.assertNotNull(exception);
-	    Assert.assertEquals("Negatives not allowed:", exception.getMessage());
-
-
-	}*/
+	}
 }
